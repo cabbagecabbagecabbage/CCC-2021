@@ -1,6 +1,3 @@
-import sys
-input = sys.stdin.readline
-
 n = int(input())
 heights = [int(i) for i in input().split()]
 widths = [int(i) for i in input().split()]
