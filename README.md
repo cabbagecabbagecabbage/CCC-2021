@@ -135,7 +135,7 @@ For example, if we need a subarray to have GCD 2, then have GCD 4, it is obvious
 
 Therefore, we will construct the array, then validate it in the end.
 
-For each requirement, assign every element in the subarray as LCM(element,Z)
+For each requirement, assign every element in the subarray as LCM(element,Z). Store this requirement so we can query it later.
 
 After the updates, query for the GCD of each range again to make sure the requirements are all satisfied in the end.
 
