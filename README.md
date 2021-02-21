@@ -15,7 +15,7 @@ Keep in mind that a problem can have multiple solutions, so these solutions are 
 
 ### J1 - Boiling Water
 
-Compute P using the formula given in the question. Then use if/elif/else statements to determine whether you are below sea level, at sea level, or above sea level.
+Compute P using the formula given in the statement. Then use if/elif/else statements to determine whether you are below sea level, at sea level, or above sea level.
 
 ### J2 - Silent Auction
 
