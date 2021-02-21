@@ -18,9 +18,13 @@ Keep in mind that a problem can have multiple solutions, so these solutions are 
 
 Compute P using the formula given in the statement. Then use if/elif/else statements to determine whether you are below sea level, at sea level, or above sea level.
 
+<hr>
+
 ### J2 - Silent Auction
 
 Maintain 2 variables: the maximum bid so far, and the name of the person who put the bid. Update the variables if and only if the new bid is **strictly greater** than the current bid. This will take care of the condition that the if there is a tie, the person whose bid was placed first wins.
+
+<hr>
 
 ### J3 - Secret Instructions
 
@@ -29,6 +33,8 @@ Use a while loop to take input continuously, and break if the input is "99999".
 Keep track of a variable "prev" which stores the previous direction that was travelled in. Update this variable every time we make a turn.
 
 Use string slicing to process parts of the 5 digits.
+
+<hr>
 
 ### J4 - Arranging Books
 
@@ -62,6 +68,8 @@ Repeat this process for each pair of letters. ("L" and "M", "M" and "S", "S" and
 
 We know that all cycles contain 3 misplaced letters, and take 2 swaps to resolve. Therefore at the end, we add temp // 3 * 2 to our answer.
 
+<hr>
+
 ### J5 - Modern Art
 Lets maintain 2 lists: 1 for counting the amount of times each row has been painted, and the other for columns.
 
@@ -87,6 +95,8 @@ Be careful of decimal precision if you're using C++.
 
 Time complexity: O(N)
 
+<hr>
+
 ### S2 - Modern Art
 
 See J5.
@@ -95,6 +105,8 @@ Time complexity: O(MN + K)
 
 There exists a faster solution using Principle of Inclusion/Exclusion that runs in O(M + N + K)
 
+<hr>
+
 ### S3 - Lunch Concert
 
 First, we can brute force the value for all positions from left to right. We notice that the values are first decreasing, then reaches a minimum (for potentially more than 1 position), then increases. We can use ternary search to find the minimum value similar to the idea described here: https://cp-algorithms.com/num_methods/ternary_search.html
@@ -102,6 +114,8 @@ First, we can brute force the value for all positions from left to right. We not
 Essentially, we pick 2 positions that divide the range into thirds. We then compare the values at these position to see which third the answer can't be in, and reduce the range by 1/3.
 
 Time Complexity: O(Nlog(P))
+
+<hr>
 
 ### S4 - Daily Commute
 
@@ -127,6 +141,8 @@ Don't forget to actually swap the stations since the swaps are persistent.
 
 Time Complexity: O(N + W + (N + D)log(N))
 
+<hr>
+
 ### S5 - Math Homework
 
 If we want a contiguous subarray to have a GCD of Z, we at least have to make sure every element in the subarray is a multiple of Z. 
@@ -144,3 +160,5 @@ After the updates, query for the GCD of each range again to make sure the requir
 To do the updates and queries in log(N) time, we can use a Segment Tree with Lazy Propogation.
 
 Time complexity: O(Mlog(N))
+
+<hr>
