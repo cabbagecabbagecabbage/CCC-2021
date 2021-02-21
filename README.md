@@ -8,6 +8,7 @@ Solutions to CCC Senior are done in C++, with the exception of S1.
 
 Keep in mind that a problem can have multiple solutions, so these solutions are likely not the only correct ones.
 
+<hr>
 
 # Brief Editorials
 
@@ -72,6 +73,7 @@ Notice that if a square has been updated an odd number of times, it will be gold
 
 Therefore, we can iterate over each of the M\*N squares, and determine the amount of times it has been updated by adding row[currentrow] + col[currentcolumn]. Add to our answer if this result is odd.
 
+<hr>
 
 ## Senior
 
