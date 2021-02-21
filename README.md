@@ -123,7 +123,7 @@ New values: X + dist[station[Y]] - 1, Y + dist[station[X]] - 1
 
 Don't forget to actually swap the stations since the swaps are persistent.
 
-Time Complexity: O(N + W + (N + D)log(N)) or O((N + D)log(N))
+Time Complexity: O(N + W + (N + D)log(N))
 
 ### S5 - Math Homework
 
