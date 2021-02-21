@@ -47,6 +47,8 @@ Case 2: letter X is in the Y section, letter Y is in the Z section, letter Z is 
 
 This can be resolved in 2 swaps: swap X and Y first. Now we have Case 1 where a letter X is in the Z section and a letter Z is in the X section. Use another swap to resolve this.
 
+Example: LLSLM -> LLLSM -> LLLMS
+
 We can determine the number of X letters in the Y section using \<Y section\>.count(X).
 
 Then calculate the number of Y letters in the X section similarly.
