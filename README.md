@@ -26,7 +26,7 @@ Use string slicing to process parts of the 5 digits.
 
 ### J4 - Arranging Books
 We can split the entire bookshelf into sections: we want all the "L"s to be in the first section, all the "M"s to be in the second section, and all the "S"s to be in the third section.
-Notice that the length of each section is precisely the total number of letters that belong on that section.
+Notice that the length of each section is precisely the total number of letters that belong in that section.
 
 Now we have 2 cases.
 
