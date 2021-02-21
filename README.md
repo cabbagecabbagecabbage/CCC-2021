@@ -79,7 +79,7 @@ With each update, simply add 1 to row[i] or col[i], depending on which one is be
 
 Notice that if a square has been updated an odd number of times, it will be gold. If it is updated an even amount of times, it will be black.
 
-Therefore, we can iterate over each of the M\*N squares, and determine the amount of times it has been updated by adding row[currentrow] + col[currentcolumn]. Add to our answer if this result is odd.
+Therefore, we can iterate over each of the M\*N squares, and determine the amount of times it has been updated by adding row[currentrow] + col[currentcolumn]. Add 1 to our answer if this result is odd.
 
 <hr>
 
