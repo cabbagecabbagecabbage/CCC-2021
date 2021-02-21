@@ -38,7 +38,7 @@ Use a while loop to take input continuously, and break if the input is "99999".
 
 Keep track of a variable "prev" which stores the previous direction that was travelled in. Update this variable every time we make a turn.
 
-Use string slicing to process parts of the 5 digits.
+Use string slicing to process parts of the 5 digits. When the first 2 digits sum to exactly 0, we use the direction that is stored in "prev".
 
 <hr>
 
