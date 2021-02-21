@@ -1,44 +1,107 @@
-// ONLY SUBTASK 1
 #include <bits/stdc++.h>
 using namespace std;
-const int nax = 2005;
-int arr[nax];
+const int nax = 15e4 + 5;
+
+struct Node{
+	int l, r, GCD, lazy = 1;
+};
+
 int n,m,x,y,z;
-vector<pair<int,int>> v;
+vector<tuple<int,int,int>> satisfy;
+Node tree[nax*4];
+
+int gcd(int a, int b){return b == 0 ? a : gcd(b, a%b);}
+int lcm(int a, int b){return a * b / gcd(a, b);}
+
+void pushup(int v){
+	int left = v << 1, right = left | 1;
+	tree[v].GCD = gcd(tree[left].GCD, tree[right].GCD); //range sum
+}
+
+void pushdown(int v){
+	int left = v << 1, right = left | 1;
+	tree[left].lazy = lcm(tree[left].lazy, tree[v].lazy);
+	tree[right].lazy = lcm(tree[right].lazy, tree[v].lazy);
+	tree[left].GCD = lcm(tree[left].GCD, tree[v].lazy);
+	tree[right].GCD = lcm(tree[right].GCD, tree[v].lazy);
+	tree[v].lazy = 1;
+}
+
+void build(int v, int l, int r){
+	tree[v].l = l; tree[v].r = r;
+	if (l == r){
+		tree[v].GCD = 1;
+		return;
+	}
+	int m = (l + r) / 2, left = v << 1, right = left | 1;
+	build(left, l, m);
+	build(right, m + 1, r);
+	pushup(v);
+}
+
+void update(int v, int ql, int qr, int GCD){
+	int l = tree[v].l, r = tree[v].r;
+	if (l > qr || r < ql){
+		return;
+	}
+	else if (ql <= l && r <= qr){
+		tree[v].GCD = lcm(tree[v].GCD, GCD);
+        tree[v].lazy = lcm(tree[v].lazy, GCD);
+        return;
+	}
+	int left = v << 1, right = left | 1;
+	pushdown(v);
+	update(left, ql, qr, GCD);
+	update(right, ql, qr, GCD);
+	pushup(v);
+}
+
+int query(int v, int ql, int qr){
+	int l = tree[v].l, r = tree[v].r;
+	if (l > qr || r < ql){
+		return -1;
+	}
+	else if (ql <= l && r <= qr){
+		return tree[v].GCD;
+	}
+	int left = v << 1, right = left | 1;
+	pushdown(v);
+	int a = query(left, ql, qr);
+	int b = query(right, ql, qr);
+	if (a == -1) return b;
+	if (b == -1) return a;
+	return gcd(a,b);
+}
+
+void out(int v, int l, int r){
+	tree[v].l = l; tree[v].r = r;
+	if (l == r){
+		cout << tree[v].GCD << " ";
+		return;
+	}
+	int m = (l + r) / 2, left = v << 1, right = left | 1;
+	pushdown(v);
+	out(left, l, m);
+	out(right, m + 1, r);
+}
+
 int main() {
 	ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 	cin >> n >> m;
-	for (int i = 1; i <= n; ++i) arr[i] = 1;
+	build(1,1,n);
 	while (m--){
 		cin >> x >> y >> z;
-		if (z == 2){
-			for (int i = x; i <= y; ++i){
-				arr[i] = 2;
-			}
-		}
-		else{
-			v.emplace_back(x,y);
-		}
+		update(1,x,y,z);
+		satisfy.emplace_back(x,y,z);
 	}
-	for (pair<int,int> k: v){
-		tie(x,y) = k;
-		bool ok = false;
-		for (int i = x; i <= y; ++i){
-			if (arr[i] == 1){
-				ok = true;
-			}
-		}
-		if (ok == false){
+	
+	for (tuple<int,int,int> k: satisfy){
+		tie(x,y,z) = k;
+		if (query(1,x,y) != z){
 			cout << "Impossible" << "\n";
 			return 0;
 		}
 	}
-	for (int i = 1; i <= n; ++i){
-		cout << arr[i] << " ";
-	}
-	cout << "\n";
-		
-
-
+	out(1,1,n); cout << "\n";
 	return 0;
 }
