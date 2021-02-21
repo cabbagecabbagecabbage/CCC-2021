@@ -83,7 +83,7 @@ There exists a faster solution using Principle of Inclusion/Exclusion that runs 
 
 First, we can brute force the value for all positions from left to right. We notice that the values are first decreasing, then reaches a minimum (for potentially more than 1 position), then increases. We can use ternary search to find the minimum value similar to the idea described here: https://cp-algorithms.com/num_methods/ternary_search.html
 
-Essentially, we pick 2 positions that divide the range into thirds. We then compare them to see which third the answer can't be in, and reduce the range by 1/3.
+Essentially, we pick 2 positions that divide the range into thirds. We then compare the values at these position to see which third the answer can't be in, and reduce the range by 1/3.
 
 Time Complexity: O(Nlog(P))
 
