@@ -15,7 +15,7 @@ int lcm(int a, int b){return a * b / gcd(a, b);}
 
 void pushup(int v){
 	int left = v << 1, right = left | 1;
-	tree[v].GCD = gcd(tree[left].GCD, tree[right].GCD); //range sum
+	tree[v].GCD = gcd(tree[left].GCD, tree[right].GCD);
 }
 
 void pushdown(int v){
