@@ -10,7 +10,13 @@ Keep in mind that a problem can have multiple solutions, so these solutions are 
 
 <hr>
 
-# Brief Editorials
+# Editorials
+
+I encourage you to use these editorials only when you've exhausted your own ideas. 
+
+These editorials exhibit my own fallible understanding of these problems. Let me know if there is anything you disagree with or is unclear.
+
+<hr>
 
 ## Junior
 
