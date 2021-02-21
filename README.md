@@ -1,3 +1,7 @@
 # CCC-2021
 
-Note the S5.cpp is only the solution to Subtask 1 worth 3/15 marks. The other solutions are full solutions.
+Full Solutions to all of the CCC 2021 Problems.
+
+Solutions to CCC Junior are done in Python 3.
+
+Solutions to CCC Senior are done in C++, with the exception of S1 because it is easier with Python floats.
