@@ -3,7 +3,7 @@ using namespace std;
 const int nax = 15e4 + 5;
 
 struct Node{
-	int l, r, GCD, lazy = 1;
+	int l, r, val, lazy = 1;
 };
 
 int n,m,x,y,z;
@@ -15,22 +15,22 @@ int lcm(int a, int b){return a * b / gcd(a, b);}
 
 void pushup(int v){
 	int left = v << 1, right = left | 1;
-	tree[v].GCD = gcd(tree[left].GCD, tree[right].GCD);
+	tree[v].val = gcd(tree[left].val, tree[right].val); //range sum
 }
 
 void pushdown(int v){
 	int left = v << 1, right = left | 1;
 	tree[left].lazy = lcm(tree[left].lazy, tree[v].lazy);
 	tree[right].lazy = lcm(tree[right].lazy, tree[v].lazy);
-	tree[left].GCD = lcm(tree[left].GCD, tree[v].lazy);
-	tree[right].GCD = lcm(tree[right].GCD, tree[v].lazy);
+	tree[left].val = lcm(tree[left].val, tree[v].lazy);
+	tree[right].val = lcm(tree[right].val, tree[v].lazy);
 	tree[v].lazy = 1;
 }
 
 void build(int v, int l, int r){
 	tree[v].l = l; tree[v].r = r;
 	if (l == r){
-		tree[v].GCD = 1;
+		tree[v].val = 1;
 		return;
 	}
 	int m = (l + r) / 2, left = v << 1, right = left | 1;
@@ -39,20 +39,20 @@ void build(int v, int l, int r){
 	pushup(v);
 }
 
-void update(int v, int ql, int qr, int GCD){
+void update(int v, int ql, int qr, int val){
 	int l = tree[v].l, r = tree[v].r;
 	if (l > qr || r < ql){
 		return;
 	}
 	else if (ql <= l && r <= qr){
-		tree[v].GCD = lcm(tree[v].GCD, GCD);
-        tree[v].lazy = lcm(tree[v].lazy, GCD);
+		tree[v].val = lcm(tree[v].val, val);
+        tree[v].lazy = lcm(tree[v].lazy, val);
         return;
 	}
 	int left = v << 1, right = left | 1;
 	pushdown(v);
-	update(left, ql, qr, GCD);
-	update(right, ql, qr, GCD);
+	update(left, ql, qr, val);
+	update(right, ql, qr, val);
 	pushup(v);
 }
 
@@ -62,7 +62,7 @@ int query(int v, int ql, int qr){
 		return -1;
 	}
 	else if (ql <= l && r <= qr){
-		return tree[v].GCD;
+		return tree[v].val;
 	}
 	int left = v << 1, right = left | 1;
 	pushdown(v);
@@ -76,7 +76,7 @@ int query(int v, int ql, int qr){
 void out(int v, int l, int r){
 	tree[v].l = l; tree[v].r = r;
 	if (l == r){
-		cout << tree[v].GCD << " ";
+		cout << tree[v].val << " ";
 		return;
 	}
 	int m = (l + r) / 2, left = v << 1, right = left | 1;
