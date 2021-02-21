@@ -24,25 +24,33 @@ Maintain 2 variables: the maximum bid so far, and the name of the person who put
 ### J3 - Secret Instructions
 
 Use a while loop to take input continuously, and break if the input is "99999". 
+
 Keep track of a variable "prev" which stores the previous direction that was travelled in. Update this variable every time we make a turn.
+
 Use string slicing to process parts of the 5 digits.
 
 ### J4 - Arranging Books
 
 We can split the entire bookshelf into sections: we want all the "L"s to be in the first section, all the "M"s to be in the second section, and all the "S"s to be in the third section.
+
 Notice that the length of each section is precisely the total number of letters that belong in that section.
 
 Now we have 2 cases.
 
 Case 1: letter X is in the Y section, and letter Y is in the X section.
+
 This can be resolved in 1 swap: swap X and Y.
+
 Example: LSLSSL -> LLLSSS
 
 Case 2: letter X is in the Y section, letter Y is in the Z section, letter Z is in the X section.
+
 This can be resolved in 2 swaps: swap X and Y first. Now we have Case 1 where a letter X is in the Z section and a letter Z is in the X section. Use another swap to resolve this.
 
 We can determine the number of X letters in the Y section using \<Y section\>.count(X).
+
 Then calculate the number of Y letters in the X section similarly.
+
 Exactly min(\<X letters in Y section\>, \<Y letters in X section\>) can be categorized as Case 1. We can resolve each of the pairs in 1 swap.
 
 The rest of the unpaired ones must belong to a cycle. Accumulate this to a variable (lets call it temp).
@@ -53,7 +61,9 @@ We know that all cycles contain 3 misplaced letters, and take 2 swaps to resolve
 
 ### J5 - Modern Art
 Lets maintain 2 lists: 1 for counting the amount of times each row has been painted, and the other for columns.
+
 More specifically, row[i] stores the amount of times that the ith row has been painted, col[i] stores the amount of times that the ith column has been painted.
+
 With each update, simply add 1 to row[i] or col[i], depending on which one is being updated.
 
 Notice that if a square has been updated an odd number of times, it will be gold. If it is updated an even amount of times, it will be black.
@@ -66,7 +76,9 @@ Therefore, we can iterate over each of the M\*N squares, and determine the amoun
 ### S1 - Crazy Fencing
 
 The area of a trapezoid is (base1 + base2) * height / 2. In this case, it is (height on the left + height on the right) * width / 2.
-Iterate over N and accumulate (height[i] + height[i+1]) * width[i] / 2
+
+Iterate over N and accumulate (height[i] + height[i+1]) * width[i] / 2.
+
 Be careful of decimal precision if you're using C++.
 
 Time complexity: O(N)
@@ -90,6 +102,7 @@ Time Complexity: O(Nlog(P))
 ### S4 - Daily Commute
 
 The key observation is that we want to get on the train from the beginning, and when we get off, we are going to walk to N instead of going to another station and waiting there.
+
 If we get off the train just to go to another station and wait there, we might as well have stayed on the train - it does not save us time.
 
 In this context, lets equate distance and time since the train travels between stations in 1 minute and we can walk between stations in 1 minute.
