@@ -155,7 +155,7 @@ If we want a contiguous subarray to have a GCD of Z, we at least have to make su
 
 However, since we have multiple requirements that may overlap, The GCD of our subarray in the end might actually be greater than after the original update. 
 
-For example, if we need a subarray to have GCD 2, then have GCD 4, it is obvious that it is impossible for both to be satisfied in the end.
+For example, if we need a subarray to have GCD 2, then have GCD 4, it is obviously impossible for both to be satisfied in the end.
 
 Therefore, we will construct the array, then validate it in the end.
 
