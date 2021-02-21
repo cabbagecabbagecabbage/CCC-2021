@@ -37,9 +37,9 @@ Example: LSLSSL -> LLLSSS
 Case 2: letter X is in the Y section, letter Y is in the Z section, letter Z is in the X section.
 This can be resolved in 2 swaps: swap X and Y first. Now we have Case 1 where a letter X is in the Z section and a letter Z is in the X section. Use another swap to resolve this.
 
-We can determine the number of X letters in the Y section using <Y section>.count(X).
+We can determine the number of X letters in the Y section using \<Y section\>.count(X).
 Then calculate the number of Y letters in the X section similarly.
-Exactly min(<X letters in Y section>, <Y letters in X section>) can be categorized as Case 1. We can resolve each of the pairs in 1 swap.
+Exactly min(\<X letters in Y section\>, \<Y letters in X section\>) can be categorized as Case 1. We can resolve each of the pairs in 1 swap.
 
 The rest of the unpaired ones must belong to a cycle. Accumulate this to a variable (lets call it temp).
 
