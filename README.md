@@ -127,9 +127,9 @@ Time Complexity: O(N + W + (N + D)log(N)) or O((N + D)log(N))
 
 ### S5 - Math Homework
 
-If we want a contiguous subarray to have a GCD of Z, then it suffices that the LCM of the subarray is Z. 
+If we want a contiguous subarray to have a GCD of Z, we at least have to make sure every element in the subarray is a multiple of Z. 
 
-However, since we have multiple requirements, The GCD of our subarray in the end might actually be greater than after the original update. 
+However, since we have multiple requirements that may overlap, The GCD of our subarray in the end might actually be greater than after the original update. 
 
 For example, if we need a subarray to have GCD 2, then have GCD 4, it is obvious that it is impossible for both to be satisfied in the end.
 
@@ -137,7 +137,7 @@ Therefore, we will construct the array, then validate it in the end.
 
 For each requirement, assign every element in the subarray as LCM(element,Z)
 
-After the updates, query each range again to make sure the requirements are all satisfied in the end.
+After the updates, query for the GCD of each range again to make sure the requirements are all satisfied in the end.
 
 To do the updates and queries in log(N) time, we can use a Segment Tree with Lazy Propogation.
 
