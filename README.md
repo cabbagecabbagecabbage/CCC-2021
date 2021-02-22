@@ -87,7 +87,7 @@ Notice that if a square has been updated an odd number of times, it will be gold
 
 Therefore, we can iterate over each of the M\*N squares, and determine the amount of times it has been updated by adding row[currentrow] + col[currentcolumn]. Add 1 to our answer if this result is odd.
 
-Also see alternative solution contributed by Kevin Zhang "J5-faster.py"
+Also see alternative solution contributed by Kevin Zhang "J5-faster.py".
 
 <hr>
 
@@ -111,7 +111,7 @@ See J5.
 
 Time complexity: O(MN + K)
 
-There exists a faster (time-complexity wise) solution using Principle of Inclusion/Exclusion that runs in O(M + N + K). See "S2-faster.cpp" contributed by Kevin Zhang
+There exists a faster (time-complexity wise) solution using Principle of Inclusion/Exclusion that runs in O(M + N + K). See "S2-faster.cpp" contributed by Kevin Zhang.
 
 <hr>
 
