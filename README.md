@@ -1,4 +1,4 @@
-# CCC-2021
+# Canadian Computer Competition 2021
 
 Full Solutions to all of the CCC 2021 Problems.
 
