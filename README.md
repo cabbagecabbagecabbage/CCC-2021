@@ -163,13 +163,15 @@ However, since we have multiple requirements that may overlap, The GCD of our su
 
 For example, if we need a subarray to have GCD 2, then have GCD 4, it is obviously impossible for both to be satisfied in the end.
 
-Therefore, we will construct the array, then validate it in the end.
+When we update each element to make sure it is divisible by Z, it is intuitive that we take LCM(element,Z) because we don't want to give it unnecessary factors that might cause more conficts. In other words, we want to multiply it by the least possible number such that it becomes divisible by Z.
+
+Because of the possible conflicts in the end, we will construct the array, then validate it in the end.
 
 For each requirement, assign every element in the subarray as LCM(element,Z). Store this requirement so we can query it later.
 
 After the updates, query for the GCD of each range again to make sure the requirements are all satisfied in the end.
 
-To do the updates and queries in log(N) time, we can use a Segment Tree with Lazy Propogation.
+To do the updates and queries in log(N) time, we can use a Segment Tree with Lazy Propogation. To update lazy flags, we can do lazy[child] = LCM(lazy[child],lazy[parent]) because LCM(a,LCM(b,c)) = LCM(LCM(a,b),c)
 
 Time complexity: O(Mlog(N))
 
