@@ -30,7 +30,7 @@ Compute P using the formula given in the statement. Then use if/elif/else statem
 
 ### J2 - Silent Auction
 
-Maintain 2 variables: the maximum bid so far, and the name of the person who put the bid. Update the variables if and only if the new bid is **strictly greater** than the current bid. This will take care of the condition that the if there is a tie, the person whose bid was placed first wins.
+Maintain 2 variables: the maximum bid so far, and the name of the person who put the bid. Update the variables if and only if the new bid is **strictly greater** than the current bid. This will take care of the condition that if there is a tie, the person whose bid was placed first wins.
 
 <hr>
 
