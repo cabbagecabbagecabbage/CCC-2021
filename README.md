@@ -12,7 +12,7 @@ Keep in mind that a problem can have multiple solutions, so these solutions are 
 
 # Editorials
 
-I encourage you to use these editorials only when you've exhausted your own ideas. 
+I encourage you to use the following editorials only when you've exhausted your own ideas. 
 
 These editorials exhibit my own fallible understanding of these problems. Let me know if there is anything incorrect or unclear.
 
