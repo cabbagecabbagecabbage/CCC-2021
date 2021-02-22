@@ -1,9 +1,12 @@
-m = int(input());
-n = int(input());
-k = int(input());
-gold = {'R':[0]*m, 'C':[0]*n};
+m, n, k = int(input()), int(input()), int(input())
+R = [0]*m
+C = [0]*n 
 for i in range(k):
-    arr, spos = input().split();
-    gold[arr][int(spos) - 1] = (gold[arr][int(spos) - 1] + 1) % 2;
-r, c = sum(gold['R']), sum(gold['C']);
-print(m * c + n * r - 2 * r * c);
+    arr, spos = input().split()
+    spos = int(spos) - 1
+    if arr == 'R':	
+    	R[spos] ^= 1
+    else:
+    	C[spos] ^= 1
+r, c = sum(R), sum(C)
+print(m * c + n * r - 2 * r * c)
