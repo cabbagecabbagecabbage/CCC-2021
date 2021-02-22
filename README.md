@@ -8,6 +8,8 @@ Solutions to CCC Senior are done in C++, with the exception of S1 which is done 
 
 Keep in mind that a problem can have multiple solutions, so these solutions are likely not the only correct ones.
 
+If you have an alternative solution, contributions are appreciated.
+
 <hr>
 
 # Editorials
@@ -123,7 +125,7 @@ Essentially, we pick 2 positions that divide the range into thirds. We then comp
 
 Time Complexity: O(Nlog(P))
 
-There are other solutions using slopes or line sweep which are absent from this repository. Feel free to contribute your solutions.
+There are other solutions using slopes or line sweep that are absent from this repository. Feel free to contribute.
 
 <hr>
 
