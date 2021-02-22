@@ -111,7 +111,7 @@ See J5.
 
 Time complexity: O(MN + K)
 
-There exists a faster (time-complexity wise) solution using Principle of Inclusion/Exclusion that runs in O(M + N + K). See S2-faster.cpp contributed by Kevin Zhang
+There exists a faster (time-complexity wise) solution using Principle of Inclusion/Exclusion that runs in O(M + N + K). See "S2-faster.cpp" contributed by Kevin Zhang
 
 <hr>
 
