@@ -52,13 +52,13 @@ Now we have 2 cases.
 
 Case 1: letter X is in the Y section, and letter Y is in the X section.
 
-This can be resolved in 1 swap: swap X and Y.
+This can be resolved in 1 swap: swap the misplaced letters X and Y.
 
 Example: LSLSSL -> LLLSSS
 
 Case 2: letter X is in the Y section, letter Y is in the Z section, letter Z is in the X section.
 
-This can be resolved in 2 swaps: swap X and Y first. Now we have Case 1 where a letter X is in the Z section and a letter Z is in the X section. Use another swap to resolve this.
+This can be resolved in 2 swaps: swap the misplaced letters X and Y first. Now we have Case 1 where a letter X is in the Z section and a letter Z is in the X section. Use another swap to resolve this.
 
 Example: LLSLM -> LLLSM -> LLLMS
 
