@@ -133,7 +133,7 @@ If we get off the train just to go to another station and wait there, we might a
 
 In this context, lets equate distance and time since the train travels between stations in 1 minute and we can walk between stations in 1 minute.
 
-First, using the walkways, compute the minimum distance to walk from each station to N (it may be impossible) using BFS. Lets call this answer dist[i] for a station i.
+First, using the walkways, compute the minimum distance to walk from each station to N (it may be impossible) using BFS. Lets call this answer dist[i] for station i.
 
 If the stations were stationary, then the answer is min(distance that the train travels from beginning to the station + distance we need to walk from the station to N) for all stations.
 
