@@ -131,7 +131,7 @@ There are other solutions using slopes or line sweep that are absent from this r
 
 ### S4 - Daily Commute
 
-The key observation is that we want to get on the train from the beginning, and when we get off, we are going to walk to N instead of going to another station and waiting there.
+The key observation is that we want to get on the train from the beginning, and when we get off, we are going to walk to N instead of going to another station and waiting there. (Note that this includes the case where we ride the train all the way to N, get off, and walk a distance of 0.)
 
 If we get off the train just to go to another station and wait there, we might as well have stayed on the train - it does not save us time.
 
