@@ -109,7 +109,9 @@ See J5.
 
 Time complexity: O(MN + K)
 
-There exists a faster solution using Principle of Inclusion/Exclusion that runs in O(M + N + K)
+There exists a faster (time-complexity wise) solution using Principle of Inclusion/Exclusion that runs in O(M + N + K).
+
+See J5-faster.py contributed by Kevin Zhang
 
 <hr>
 
