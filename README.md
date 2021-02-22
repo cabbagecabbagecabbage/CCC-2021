@@ -117,11 +117,13 @@ There exists a faster (time-complexity wise) solution using Principle of Inclusi
 
 ### S3 - Lunch Concert
 
-First, we can brute force the value for all positions from left to right. We notice that the values are first decreasing, then reaches a minimum (for potentially more than 1 position), then increases. We can use ternary search to find the minimum value similar to the idea described here: https://cp-algorithms.com/num_methods/ternary_search.html
+First, we can brute force the value for all positions from left to right for Subtask 1 (the final solution does not include this step). We notice that the values are first decreasing, then reaches a minimum (for potentially more than 1 position), then increases. We can use ternary search to find the minimum value similar to the idea described here: https://cp-algorithms.com/num_methods/ternary_search.html
 
 Essentially, we pick 2 positions that divide the range into thirds. We then compare the values at these position to see which third the answer can't be in, and reduce the range by 1/3.
 
 Time Complexity: O(Nlog(P))
+
+There are other solutions using slopes or line sweep which are absent from this repository. Feel free to contribute your solutions.
 
 <hr>
 
