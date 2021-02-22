@@ -46,8 +46,8 @@ void update(int v, int ql, int qr, int val){
 	}
 	else if (ql <= l && r <= qr){
 		tree[v].val = lcm(tree[v].val, val);
-        tree[v].lazy = lcm(tree[v].lazy, val);
-        return;
+		tree[v].lazy = lcm(tree[v].lazy, val);
+		return;
 	}
 	int left = v << 1, right = left | 1;
 	pushdown(v);
