@@ -76,6 +76,8 @@ Repeat this process for each pair of letters. ("L" and "M", "M" and "S", "S" and
 
 We know that all cycles contain 3 misplaced letters, and take 2 swaps to resolve. Therefore at the end, we add temp // 3 * 2 to our answer.
 
+Note that counting letters in a range can be sped up to constant time using prefix sum arrays, but that isn't necessary for this question.
+
 <hr>
 
 ### J5 - Modern Art
