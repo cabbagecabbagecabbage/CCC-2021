@@ -68,7 +68,7 @@ We can determine the number of X letters in the Y section using \<Y section\>.co
 
 Then calculate the number of Y letters in the X section similarly.
 
-Exactly min(\<X letters in Y section\>, \<Y letters in X section\>) pairs can be categorized as Case 1. We can resolve each of the pairs in 1 swap.
+Exactly min(\<X letters in Y section\>, \<Y letters in X section\>) pairs can be categorized as Case 1. We can resolve each of the pairs in 1 swap, so we add the number of pairs to our answer.
 
 The rest of the unpaired ones must belong to a cycle. Accumulate this to a variable (lets call it temp).
 
